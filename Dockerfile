@@ -4,5 +4,6 @@ MAINTAINER ServisHero
 
 RUN apk --no-cache add \
   nodejs \
+  bash \
   python \
   py-pip && pip install --upgrade awsebcli
