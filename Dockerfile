@@ -1,5 +1,5 @@
 # Docker file to run AWS EB CLI tools.
-FROM alpine
+FROM alpine:3.16.0
 MAINTAINER ServisHero
 
 RUN apk --no-cache add \
