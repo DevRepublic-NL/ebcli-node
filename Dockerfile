@@ -1,10 +1,16 @@
 # Docker file to run AWS EB CLI tools.
 FROM alpine:3.16.0
-MAINTAINER ServisHero
+LABEL maintainer=ravidevrepublic
 
-RUN apk --no-cache add \
+RUN apk --no-cache add \ 
   nodejs \
+  npm \
   bash \
-  python \
+  python3 \
+  python3-dev \
+  build-base \
+  libffi-dev \
   make \
-  py-pip && pip install --upgrade awsebcli
+  py3-pip
+RUN pip install wheel
+RUN pip install --ignore-installed six awsebcli --upgrade
